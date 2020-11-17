@@ -854,7 +854,7 @@ function createForm<FormValues: FormValuesShape>(
           notifyFieldListeners(name)
         } else {
           notifyFormListeners()
-          notifyFieldListeners()
+          notifyFieldListeners(name)
         }
       }
       if (fieldConfig) {
