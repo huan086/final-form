@@ -483,18 +483,20 @@ function createForm<FormValues: FormValuesShape>(
     const safeFields = { ...fields }
     const notifyField = (name: string) => {
       const field = safeFields[name]
-      const fieldState = publishFieldState(formState, field)
-      const { lastFieldState } = field
-      field.lastFieldState = fieldState
-      const fieldSubscriber = fieldSubscribers[name]
-      if (fieldSubscriber) {
-        notify(
-          fieldSubscriber,
-          fieldState,
-          lastFieldState,
-          filterFieldState,
-          lastFieldState === undefined
-        )
+      if (field) {
+        const fieldState = publishFieldState(formState, field)
+        const { lastFieldState } = field
+        field.lastFieldState = fieldState
+        const fieldSubscriber = fieldSubscribers[name]
+        if (fieldSubscriber) {
+          notify(
+            fieldSubscriber,
+            fieldState,
+            lastFieldState,
+            filterFieldState,
+            lastFieldState === undefined
+          )
+        }
       }
     }
     if (name) {
