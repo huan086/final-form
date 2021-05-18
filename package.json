@@ -1,6 +1,6 @@
 {
   "name": "final-form",
-  "version": "4.20.1",
+  "version": "4.20.2",
   "description": "🏁 Framework agnostic, high performance, subscription-based form state management",
   "main": "dist/final-form.cjs.js",
   "jsnext:main": "dist/final-form.es.js",
@@ -101,7 +101,7 @@
     },
     {
       "path": "dist/final-form.cjs.js",
-      "maxSize": "9.6kB"
+      "maxSize": "9.5kB"
     }
   ],
   "dependencies": {
